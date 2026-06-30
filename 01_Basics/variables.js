@@ -17,3 +17,7 @@ accountcity = "jaipur"
 accountsate = "gujart"
 
 console.table([accountId,accountEmail,accountpass,accountsate,accountcity])
+
+console.log(typeof accountEmail);
+console.log(typeof accountId);
+console.log(typeof[accountEmail,accountId,accountpass,accountsate]);
