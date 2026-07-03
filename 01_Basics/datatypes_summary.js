@@ -24,3 +24,4 @@ const myfunction = function(){
 }
 
 console.log(typeof myfunction)
+
