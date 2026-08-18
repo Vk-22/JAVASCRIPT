@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai or code</title>
+</head>
+<body style="background-color: #212121; color: #fff">
+    <ul class="langName">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addlang(langName){
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.langName').appendChild(li)
+    }
+    addlang("python")
+
+    function addoptiLang(langName){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.langName').appendChild(li)
+     }
+     addoptiLang("typescript")
+
+ //Edit
+  
+   const secondLang = document.querySelector("li:nth-child(2)")
+   const newli = document.createElement('li')
+   newli.textContent("MOJO")
+   secondLang.replaceWith(newli)
+
+   const firstLang = document.querySelector("li: first-child")
+   firstLang.outerHTML = '<li>Java</li>'
+
+ //Remove
+   const rm = Document.querySelector('li: first-child')
+   rm.remove()
+</script>
+</html>
