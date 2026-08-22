@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guess the Number Game</title>
+  <style>
+    /* Reset & Page Layout */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #0f172a;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #f8fafc;
+    }
+
+    /* Game Container */
+    .game-card {
+      background: #1e293b;
+      padding: 2.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+      border: 1px solid #334155;
+    }
+
+    h1 {
+      font-size: 1.75rem;
+      margin-bottom: 0.5rem;
+      color: #38bdf8;
+    }
+
+    p.subtitle {
+      color: #94a3b8;
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Form & Input Elements */
+    .input-group {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    input[type="number"] {
+      flex: 1;
+      padding: 0.75rem;
+      font-size: 1rem;
+      border-radius: 0.5rem;
+      border: 1px solid #475569;
+      background: #0f172a;
+      color: #fff;
+      outline: none;
+      text-align: center;
+    }
+
+    input[type="number"]:focus {
+      border-color: #38bdf8;
+    }
+
+    button {
+      padding: 0.75rem 1.25rem;
+      font-size: 1rem;
+      font-weight: 600;
+      background: #0284c7;
+      color: #fff;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    button:hover {
+      background: #0369a1;
+    }
+
+    /* Message & Status Displays */
+    .message {
+      font-size: 1.1rem;
+      font-weight: 600;
+      min-height: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .attempts-tracker {
+      font-size: 0.95rem;
+      color: #cbd5e1;
+      margin-bottom: 1.5rem;
+    }
+
+    .attempts-tracker span {
+      font-weight: bold;
+      color: #f43f5e;
+    }
+
+    /* Previous Guesses List */
+    .history-section {
+      border-top: 1px solid #334155;
+      padding-top: 1rem;
+      text-align: left;
+    }
+
+    .history-section h3 {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #94a3b8;
+      margin-bottom: 0.5rem;
+    }
+
+    .guess-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .guess-list li {
+      background: #334155;
+      padding: 0.4rem 0.8rem;
+      border-radius: 0.25rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="game-card">
+    <h1>Guess The Number</h1>
+    <p class="subtitle">Pick a number between 1 and 100</p>
+
+    <div class="input-group">
+      <input type="number" id="guessInput" placeholder="Enter number" min="1" max="100">
+      <button id="submitBtn">Guess</button>
+    </div>
+
+    <!-- Status message for Win/Loss/Hints -->
+    <div id="message" class="message"></div>
+
+    <!-- Remaining attempts counter -->
+    <div class="attempts-tracker">
+      Attempts Remaining: <span id="attemptsLeft">5</span>
+    </div>
+
+    <!-- History list of user guesses -->
+    <div class="history-section">
+      <h3>Your Guesses</h3>
+      <ul id="guessList" class="guess-list"></ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
