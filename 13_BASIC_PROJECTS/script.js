@@ -10,4 +10,4 @@ btn.addEventListener('click', function() {
         btn.innerText = 'Turn ON'
     }
 
-})
+});
