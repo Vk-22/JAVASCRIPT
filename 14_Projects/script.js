@@ -1,4 +1,4 @@
-const counterDisplay     = document.getElementById("counterDisplay")
+const counterDisplay = document.getElementById("counterDisplay")
 const Plus = document.getElementById("Plus")
 const Minus = document.getElementById("Minus")
 
